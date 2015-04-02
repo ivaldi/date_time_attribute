@@ -61,7 +61,7 @@ module DateTimeAttribute
           define_attribute_methods
         end
 
-        attr_accessor attribute unless method_defined?(attribute)
+        #attr_accessor attribute unless method_defined?(attribute)
 
         define_method("#{attribute}_date") do
           in_time_zone(time_zone) do |time_zone|
@@ -69,7 +69,7 @@ module DateTimeAttribute
           end
         end
 
-        alias_method "old_#{attribute}=", "#{attribute}="
+        #alias_method "old_#{attribute}=", "#{attribute}="
 
         define_method("#{attribute}=") do |val|
           in_time_zone(time_zone) do |time_zone|
